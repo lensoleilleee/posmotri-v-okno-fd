@@ -20,6 +20,7 @@ html {
   margin-top: 133px;
   margin-bottom: 133px;
   justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -68,7 +69,6 @@ ol {
   display: grid;
   gap: 30px;
   width: 1140px;
-  height: 534px;
   grid-template-columns: 711px 399px;
   grid-template-areas: "content-result content-details";
 }
@@ -85,7 +85,6 @@ ol {
 }
 
 .result {
-  height: 456px;
   grid-area: content-result;
   align-self: end;
 }
@@ -93,16 +92,9 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 22px;
   grid-area: content-details;
   justify-content: end;
-}
-
-.search-form {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  height: 54px;
 }
 
 .content__list-container {
@@ -113,22 +105,22 @@ ol {
 
 .result__video-container {
   margin-bottom: 16px;
-  width: 711px;
-  height: 386px;
+  block-size: 386px;
+  inline-size: 711px;
   position: relative;
 }
 
 .result__video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .content__video-card {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  height: 103px;
+  block-size: 103px;
   width: 390px;
 }
 
@@ -162,7 +154,6 @@ ol {
   font-size: 75px;
   line-height: 95%;
   text-transform: uppercase;
-  max-height: 210px;
 }
 
 .content__accent {
@@ -182,9 +173,6 @@ ol {
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
-}
-
-.content__video-card-description-container h2 {
   white-space: nowrap;
   text-overflow: ellipsis;
   padding-bottom: 4px;
@@ -203,8 +191,8 @@ ol {
 .search-form {
   display: flex;
   align-items: end;
+  justify-content: space-between;
   column-gap: 4px;
-  padding-bottom: 2px;
 }
 
 .search-form__checkbox-list {
@@ -234,7 +222,8 @@ fieldset {
   background-color: transparent;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  word-spacing: -2px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .search-form__textfield:active {
@@ -287,7 +276,7 @@ fieldset {
 
 .button {
   height: 34px;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background-color: transparent;
   color: currentColor;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -328,7 +317,7 @@ fieldset {
   background-color: #545050;
 }
 
-.content__video-card-description-container:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
@@ -338,4 +327,8 @@ fieldset {
 
 .content__card-link:focus-visible {
   outline: 1px solid currentColor;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
